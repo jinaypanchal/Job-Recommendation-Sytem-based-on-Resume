@@ -208,8 +208,8 @@ def getJobs(request, resume_url, loc, job_title, last_posted):
     df_unique = df.drop_duplicates(subset='title', keep='first')
 
     # Upload df_unique to S3 as CSV - added by jinay
-    s3_bucket = 'userresumes'
-    s3_key = 'path/to/your/training_data.csv'
+    s3_bucket = 'trainingdatajobscsv'
+    s3_key = 'train.csv'
     upload_df_to_s3(df_unique, s3_bucket, s3_key)
 
     # get top 10 jobs
